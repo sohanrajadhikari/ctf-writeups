@@ -53,6 +53,35 @@ This script gave the correct password, which was then used to extract the flag.
 ## PW Crack 4
 For this challange, I used the same script as the last one to find the password but with two changes.  
 The ``correct_pw_hash = open('level3.hash.bin', 'rb').read()`` was changed to ``correct_pw_hash = open('level4.hash.bin', 'rb').read()``  
-Nothing too dramatic, just changed the 3 to 4.
+Nothing too dramatic, just changed the 3 to 4.  
 Also, the *pos_pw_list* was updated to include all the 100 possible passwords. The script worked, gave the password and the flag was obtained.
 
+
+##PW Crack 5
+The concept was pretty clear. Instead of a pre-defined list, I had to read from a file and check each password in the file against the hash list.  
+```
+import hashlib
+
+#hashes the password
+def hash_pw(pw_str): 
+    pw_bytes = bytearray()
+    pw_bytes.extend(pw_str.encode())
+    m = hashlib.md5()
+    m.update(pw_bytes)
+    return m.digest()
+
+#possible passwords
+with open('dictionary.txt', 'r') as file:
+    pos_pw_list = file.read().splitlines()
+
+#loads the correct hash
+correct_pw_hash = open('level5.hash.bin', 'rb').read()
+
+#checks if each password in the list is identical to the correct hash when hashed by hash>
+for pw in pos_pw_list:
+        if hash_pw(pw) == correct_pw_hash:
+                #prints the correct password
+                print(pw)
+                break
+```
+This was the code for this challange. Only change was with possible passwords. All else logic was exactly the same.
