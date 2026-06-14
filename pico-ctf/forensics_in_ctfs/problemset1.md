@@ -4,7 +4,7 @@ I then looked at the metadata through ``exiftool``, didn't find anything at firs
 
 
 ## Glory of the Garden
-
+Found the flag simply by using ``cat`` and ``grep`` on the output.
 
 
 ## Enhance!
