@@ -1,7 +1,7 @@
 # Obidient Chat  
 Seemed pretty simple, downloaded a file, used 'cat' command in terminal to display the contents and got the flag.   
 
-``bash
+``
 cat [file_name]
 ``
 
@@ -10,7 +10,7 @@ Didn't understand how to login with SSH.
 Started the instance, took the first hint and learned about how to specify login name, website/service, and port number.  
 Used the provided details to log in and capture the flag.  
 
-``bash
+``
 ssh [website] -l [login name] -p [port_number]
 ``
 
@@ -18,6 +18,6 @@ ssh [website] -l [login name] -p [port_number]
 Looked at the hint. Got knowledge about netcat.  
 Netcat is a tool used to listen to open ports. Connections can be established with help of nc.  
 
-``bash
+``
 nc [website] [port]
 ``
