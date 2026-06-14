@@ -1,5 +1,5 @@
 1. Obidient Chat
-   Seemed pretty simple, downloaded a file, used 'cat' command in terminal to display the contents and got the flag.
+   Seemed pretty simple, downloaded a file, used 'cat' command in terminal to display the contents and got the flag. 
    cat [file_name]
 
 2. Super SSH
