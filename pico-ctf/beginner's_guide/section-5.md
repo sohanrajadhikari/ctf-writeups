@@ -3,13 +3,16 @@ The svg didn't really show the flag at first. Downloaded inkscape to manage svg 
 Saw that there was a "Text Path". Extracted the flag from there.
 
 
+
 ## Big Zip
 Downloaded the file, unzipped it, used ``grep "picoCTF" -r`` and boom! Got the flag.
+
 
 
 ## Vault Door Training
 I was a bit unfamiliar with the Java code but the password at the bottom of the source code made the problem pretty obvious.  
 It took me some time to realize that the password should be wrapped up in picoCTF{} but figured out eventually.
+
 
 
 ## keygenme-py
@@ -36,4 +39,6 @@ Initially, I forgot that the arrays start with 0 and not 1 and ended up with thi
 Finally, I reordered the characters in the correct format and got the final key : `` picoCTF{1n_7h3_kk3y_of_08c46aa4} ``
 
 
-## 
+
+## buffer overflow 0
+At first, I had no idea what to do. I looked inside the code of ``vuln.c`` and observed that the buffer limit for buffer was 64. So, I connected with help of ``nc`` with the instance and overloaded the buffer with more than buffer size and got the flag.
