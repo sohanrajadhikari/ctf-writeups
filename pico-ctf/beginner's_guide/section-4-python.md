@@ -54,7 +54,7 @@ This script gave the correct password, which was then used to extract the flag.
 For this challange, I used the same script as the last one to find the password but with two changes.  
 The ``correct_pw_hash = open('level3.hash.bin', 'rb').read()`` was changed to ``correct_pw_hash = open('level4.hash.bin', 'rb').read()``  
 Nothing too dramatic, just changed the 3 to 4.  
-Also, the *pos_pw_list* was updated to include all the 100 possible passwords. The script worked, gave the password and the flag was obtained.
+Also, the ``pos_pw_list`` was updated to include all the 100 possible passwords. The script worked, gave the password and the flag was obtained.
 
 
 ## PW Crack 5
