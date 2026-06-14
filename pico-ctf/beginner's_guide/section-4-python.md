@@ -57,7 +57,7 @@ Nothing too dramatic, just changed the 3 to 4.
 Also, the *pos_pw_list* was updated to include all the 100 possible passwords. The script worked, gave the password and the flag was obtained.
 
 
-##PW Crack 5
+## PW Crack 5
 The concept was pretty clear. Instead of a pre-defined list, I had to read from a file and check each password in the file against the hash list.  
 ```
 import hashlib
