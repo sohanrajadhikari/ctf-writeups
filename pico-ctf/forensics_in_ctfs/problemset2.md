@@ -22,4 +22,5 @@ The first command gave the inode and the second one gave the flag.
 
 
 ## Sleuthkit apprentice
-
+Looked through all the folders but the usual ``grep`` and ``srch_strings`` commands didn't work.  
+Went to autopsy, sorted the files by categories and stumbled upon a file wit "flag" in it's name. Used ``icat`` to list the file's contents and found the flag.
