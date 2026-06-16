@@ -50,5 +50,7 @@ After looking at the code, it was obvious that the encoding used was simple ``he
 
 
 
-``[Hard Questions]``
-## Vault Door 7
+
+## Vault Door 7 [Hard]
+
+ 
