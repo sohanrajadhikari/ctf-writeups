@@ -52,11 +52,24 @@ After looking at the code, it was obvious that the encoding used was simple ``he
 
 
 ## Vault Door 7 [Hard]
+First look, it looked complex. But after reading the instructions? Not so much.  
+The password is encrypted by turning a character into it's binary form. A single character like 'a' takes up 8 bits. If you line up 4 of such characters side by side, you get a 32 bit integer. Then you turn that integer(in binary) to decimal and you've got a part of your code.
 
+Step 1: To tackle this, you have to do is take that decimal value.
 <img width="400" height="269" alt="image" src="https://github.com/user-attachments/assets/95ebb2ab-c24f-4a57-9597-5c231166f33f" />
-<img width="526" height="475" alt="image" src="https://github.com/user-attachments/assets/45b288c9-832e-488e-853c-d71581c36e33" />
-<img width="526" height="475" alt="image" src="https://github.com/user-attachments/assets/a1232a7f-3357-478f-9091-e41bfd95c331" />
- <img width="714" height="433" alt="image" src="https://github.com/user-attachments/assets/af3ba98f-9313-4bc3-b6b7-c94af3e3a96d" />
 
+Step 2: Go to an online converter and convert that decimal to raw bits.
+<img width="526" height="475" alt="image" src="https://github.com/user-attachments/assets/a1232a7f-3357-478f-9091-e41bfd95c331" />
+
+Step 3: In cyberchef, use ``from binary`` to get the part of your code.
+<img width="714" height="433" alt="image" src="https://github.com/user-attachments/assets/af3ba98f-9313-4bc3-b6b7-c94af3e3a96d" />
+
+Step 4: Rinse, and repeat! You'll get your flag.  
+
+All in all, this challange doesn't deserve the ``hard`` tag in my opinion. It's too easy!
+
+
+
+## Vault Door 8
 
 
