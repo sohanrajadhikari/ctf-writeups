@@ -42,3 +42,13 @@ I used ``cat`` and found that the characters of the password were encoded in ``d
 
 
 ## Vault Door 5
+Just taking a look at the code was enought to confirm that the code uses ``url-encoding`` followed by ``base64`` encoding. I just had to decode in the reverse order in Cyberchef and get the flag.  
+
+
+## Vault Door 6
+After looking at the code, it was obvious that the encoding used was simple ``hex`` and ``XOR`` with the key being ``0x55``. Same process as the previous one and the flag was obtained.
+
+
+
+``[Hard Questions]``
+## Vault Door 7
