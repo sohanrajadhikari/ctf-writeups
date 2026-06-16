@@ -37,3 +37,8 @@ print(f"picoCTF{{{flag_contents}}}")
 
 
 ## Vault Door 4
+I used ``cat`` and found that the characters of the password were encoded in ``decimal``, ``hex`` and ``octal`` respectively. It was just a matter of decoding in cyberchef after that!  
+
+
+
+## Vault Door 5
