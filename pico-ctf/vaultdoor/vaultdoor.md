@@ -55,7 +55,7 @@ After looking at the code, it was obvious that the encoding used was simple ``he
 First look, it looked complex. But after reading the instructions? Not so much.  
 The password is encrypted by turning a character into it's binary form. A single character like 'a' takes up 8 bits. If you line up 4 of such characters side by side, you get a 32 bit integer. Then you turn that integer(in binary) to decimal and you've got a part of your code.
 
-Step 1: To tackle this, you have to do is take that decimal value.
+Step 1: To tackle this, you have to take that decimal value.  
 <img width="400" height="269" alt="image" src="https://github.com/user-attachments/assets/95ebb2ab-c24f-4a57-9597-5c231166f33f" />
 
 Step 2: Go to an online converter and convert that decimal to raw bits.
@@ -70,6 +70,52 @@ All in all, this challange doesn't deserve the ``hard`` tag in my opinion. It's 
 
 
 
-## Vault Door 8
+## Vault Door 8 [Hard]
+Due to imporper indentation and presentation, the code was a lot harder to read and decode. What I induced from the code was that the password that the user provides is scrambled, individually, character by character, bit by bit, and is checked against an expected array of hex codes. So, what I did to reverse this process is down in the python code. 
+First, I wrote the bit switching algorithm that switches individual bits inside of a hex character (switching happens in binary).  
+Then, I wrote a function that simply switches the bits in reverse order to how it is switch originally in the orginal code.  
+Finally, the descrambled bits are turned into string and printed.
+
+```
+expected = [
+    0xF4, 0xC0, 0x97, 0xF0, 0x77, 0x97, 0xC0, 0xE4,
+    0xF0, 0x77, 0xA4, 0xD0, 0xC5, 0x77, 0xF4, 0x86,
+    0xD0, 0xA5, 0x45, 0x96, 0x27, 0xB5, 0x77, 0xD2,
+    0xC2, 0xF1, 0x95, 0x95, 0xD1, 0xE0, 0x94, 0xC2
+]
+
+
+def switch_bits(n, p1, p2):
+    # Extract the bits at the given positions
+    b1 = (n >> p1) & 1
+    b2 = (n >> p2) & 1
+
+    # Swap them only if they differ
+    if b1 != b2:
+        n ^= (1 << p1) | (1 << p2)
+    return n
+
+def reverse_transform(c):
+    # Apply the inverse sequence of bit swaps
+    c = switch_bits(c, 6, 7)
+    c = switch_bits(c, 2, 5)
+    c = switch_bits(c, 3, 4)
+    c = switch_bits(c, 0, 1)
+    c = switch_bits(c, 4, 7)
+    c = switch_bits(c, 5, 6)
+    c = switch_bits(c, 0, 3)
+    c = switch_bits(c, 1, 2)
+    return c
+
+
+# Decode each byte by reversing the transformation
+result = [reverse_transform(x) for x in expected]
+
+# Convert the decoded bytes to an ASCII string
+password = ''.join(chr(x) for x in result)
+
+print(password)
+```
+Now, THIS is a proper proper ``hard`` challange! Took me a whole lot of time to figure out. AI assistance was definitely needed.
 
 
