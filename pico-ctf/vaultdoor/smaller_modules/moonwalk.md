@@ -52,8 +52,13 @@ Exiftool revealed nothing significant except for the fact that all 4 are differe
 ### SSTV
 I don't imagine they would try to pull the same trick twice but you can't be too sure, that is why I scanned all 4 for any hidden images inside them.
 1. message.wav - The image came out the same as the last challange, which is immediately a red flag. Sure enough, the final flag was not in the image.
-2. clue1.wav - The image had this `` password : hidden_stegosaurs `` which can only mean that something like zteg was used in one of the 4 files and we have to use this passkey to crack it.
+2. clue1.wav - The image had this `` password : hidden_stegosaurus `` which can only mean that something like zteg was used in one of the 4 files and we have to use this passkey to crack it.
 3. clue2.wav - The image contained this : ``The quieter you are the more you can HEAR``. I don't understand this at the moment, truly. If I had to guess, I would probably have to lower the volume or do something related to it in this clue.
 4. clue3.wav - To be honest, the image is a little blurry so I don't understand the full text. I can guess what is being said is :  `` Alan Eleaser the FutureBoy``. Again, I suspect this to be just a bait.
 
-### steghide
+### Steghide
+So, I tested the pasphrase for message.wav. 
+<img width="521" height="43" alt="image" src="https://github.com/user-attachments/assets/f44d2caf-b178-4733-8b4b-ebf8e7adea25" />
+Now, using cat, the flag was found easily. Meaning, the only clue needed was the clue1.   
+
+To be honest, the first one deserved the "hard" tag a lot more than the second one. But that may just be because of the second one buiding on the first one.
