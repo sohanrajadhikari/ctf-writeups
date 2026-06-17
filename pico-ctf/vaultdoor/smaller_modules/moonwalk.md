@@ -39,3 +39,21 @@ In the end, I opened the first hint and immediately knew that there was an image
 <img width="528" height="417" alt="image" src="https://github.com/user-attachments/assets/66852661-1a68-4961-9075-93b8cb99b455" />
 
 Once again, I tried using steghide with the newly found flag but it was pretty obvious that the steghide was a red herring. Pretty smart, in my opinion. Would have been hard to do this without any hints.
+
+
+<hr>
+
+## Part 2 [Hard]
+Okay, this one is a bit different. There are four different files instead of one. ``message.wav``, ``clue1.wav``, ``clue2.wav``, ``clue3.wav``. I imagine I will have to solve all of the clues in order before approaching the big bad final boss but we'll have to see.
+
+### Exiftool
+Exiftool revealed nothing significant except for the fact that all 4 are different in length and are 'unique pieces'.
+
+### SSTV
+I don't imagine they would try to pull the same trick twice but you can't be too sure, that is why I scanned all 4 for any hidden images inside them.
+1. message.wav - The image came out the same as the last challange, which is immediately a red flag. Sure enough, the final flag was not in the image.
+2. clue1.wav - The image had this `` password : hidden_stegosaurs `` which can only mean that something like zteg was used in one of the 4 files and we have to use this passkey to crack it.
+3. clue2.wav - The image contained this : ``The quieter you are the more you can HEAR``. I don't understand this at the moment, truly. If I had to guess, I would probably have to lower the volume or do something related to it in this clue.
+4. clue3.wav - To be honest, the image is a little blurry so I don't understand the full text. I can guess what is being said is :  `` Alan Eleaser the FutureBoy``. Again, I suspect this to be just a bait.
+
+### steghide
