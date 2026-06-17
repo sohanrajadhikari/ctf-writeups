@@ -13,17 +13,17 @@ Right off the bat, the audio message threw me in for a loop. First, I played it 
 Keeping these options in mind, I tried all of them one by one.  
 
 ### Exiftool:
-<img width="490" height="293" alt="image" src="https://github.com/user-attachments/assets/a178977f-44be-4d46-924e-7e248a702761" />
+<img width="490" height="293" alt="image" src="https://github.com/user-attachments/assets/a178977f-44be-4d46-924e-7e248a702761" />  
 Nothing obvious was obtained from there.
 
 ### Morse Code
 Listening to the audio, I thought maybe the audio could be something like morse code. Using an online converter, I found nothing.  
-<img width="990" height="656" alt="image" src="https://github.com/user-attachments/assets/cea44568-7117-4645-9a3e-dacb4e173ba4" />
+<img width="495" height="328" alt="image" src="https://github.com/user-attachments/assets/cea44568-7117-4645-9a3e-dacb4e173ba4" />  
 This idea could be revisited later though.
 
 
 ### Audio Visualizer
-<img width="814" height="497" alt="image" src="https://github.com/user-attachments/assets/c199a3f5-6ca5-4a7a-9b47-39249e70a1b2" />
+<img width="814" height="497" alt="image" src="https://github.com/user-attachments/assets/c199a3f5-6ca5-4a7a-9b47-39249e70a1b2" />  
 Seeing the audio waveform didn't give much clue either. Maybe slowing down would provide something.
 
 ### Steghide
