@@ -23,10 +23,17 @@ This idea could be revisited later though.
 
 
 ### Audio Visualizer
-<img width="814" height="497" alt="image" src="https://github.com/user-attachments/assets/c199a3f5-6ca5-4a7a-9b47-39249e70a1b2" />  
+<img width="814" height="497" alt="image" src="https://github.com/user-attachments/assets/c199a3f5-6ca5-4a7a-9b47-39249e70a1b2" />   
+
 Seeing the audio waveform didn't give much clue either. Maybe slowing down would provide something.
 
 ### Steghide
 I remembered about this tool and executed ``steghide --extract -sf message.wav`` immediately which then prompted for a passphrase. Good news : The data definitely hides inside the file. Bad news : I don't know how to extract the passphrase.   
 I tried a bruteforce attack immediately but couldn't be cracked with ``rockyou.txt``
-<img width="441" height="84" alt="image" src="https://github.com/user-attachments/assets/dbf11deb-7fed-4029-8010-f485138f37a7" />
+<img width="441" height="84" alt="image" src="https://github.com/user-attachments/assets/dbf11deb-7fed-4029-8010-f485138f37a7" />  
+
+### SSTV
+In the end, I opened the first hint and immediately knew that there was an image file within the .wav file. After that, I researched and found you could decode these images with a SSTV decoder. The image came out upside down but I could find the flag from that pretty easily.
+<img width="528" height="417" alt="image" src="https://github.com/user-attachments/assets/66852661-1a68-4961-9075-93b8cb99b455" />
+
+Once again, I tried using steghide with the newly found flag but it was pretty obvious that the steghide was a red herring. Pretty smart, in my opinion. Would have been hard to do this without any hints.
