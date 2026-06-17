@@ -57,8 +57,10 @@ I don't imagine they would try to pull the same trick twice but you can't be too
 4. clue3.wav - To be honest, the image is a little blurry so I don't understand the full text. I can guess what is being said is :  `` Alan Eleaser the FutureBoy``. Again, I suspect this to be just a bait.
 
 ### Steghide
-So, I tested the pasphrase for message.wav. 
-<img width="521" height="43" alt="image" src="https://github.com/user-attachments/assets/f44d2caf-b178-4733-8b4b-ebf8e7adea25" />
+So, I tested the pasphrase for message.wav.   
+
+<img width="521" height="43" alt="image" src="https://github.com/user-attachments/assets/f44d2caf-b178-4733-8b4b-ebf8e7adea25" />  
+
 Now, using cat, the flag was found easily. Meaning, the only clue needed was the clue1.   
 
 To be honest, the first one deserved the "hard" tag a lot more than the second one. But that may just be because of the second one buiding on the first one.
