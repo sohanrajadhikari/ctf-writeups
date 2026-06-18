@@ -24,7 +24,7 @@ The code is very much readable unlike last time, thank you.
 So here's what I found after analyzing for a while:
 1. All four files are loaded up.
 2. The flag in flag.txt is 26 bytes which is then redestributed through a multitude of ways.
-3. I will just show you the reconstructed code.
+3. I will just show you the code reconstructed with the help of AI.
 
 ```
 #include <stdio.h>
@@ -98,5 +98,37 @@ This is roughly what the ``mystery`` file does. Now, mostly you can see what rem
 ## Reverse Engineering
 Now, onto the fun part. I wrote a python code to reverse this on the original images before I did any tampering.
 ```
+# open all the files
 
+with open("mystery.png", "rb") as f:
+        mystery1 = f.read()
+
+with open("mystery2.png", "rb") as f2:
+        mystery2 = f2.read()
+
+with open("mystery3.png", "rb") as f3:
+        mystery3 = f3.read()
+
+# Load the bytes located at the end of the files
+d1 = mystery1[-16:]
+d2 = mystery2[-2:]
+d3 = mystery3[-8:]
+
+#Declare the flag
+flag = bytearray()
+
+# Rearrange the bytes into proper order
+flag.append((d2[0]-0x15) & 0xff)
+flag.extend(d3[0:2])
+flag.append((d2[1] - 0x4) & 0xff)
+flag.append(d1[0])
+flag.append(d3[2])
+flag.extend(d1[1:5])
+flag.extend(d3[3:8])
+flag.extend(d1[5:16])
+
+#Print the flag
+print(bytes(flag))
 ```
+
+Running this code successfully gave the flag : ``picoCTF{An0tha_1_3d08c574}``.
