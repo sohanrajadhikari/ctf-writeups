@@ -8,7 +8,8 @@ Right off, the bat, opening the png doesn't really give anything except a questi
 Using ``cat`` on mystery.png, I found a string right at the end of the file : picoCTK�k5zsid6q_6099dfbd}. Now, this might or might not be the flag but the format matches. Just the CTF is changed to CTK and the { is changed to an unrecognizable character. Maybe a substitution has been done on select characters.
 
 ### Executing the file
-The mystery binary file might be executable, so I used ``chmod +x mystery`` to make the file executable and executed it. The output was a bit confusing.
+The mystery binary file might be executable, so I used ``chmod +x mystery`` to make the file executable and executed it. The output was a bit confusing.  
+
 <img width="498" height="56" alt="image" src="https://github.com/user-attachments/assets/51ab6040-fe7e-4a7d-826c-4f15669893a9" />
 
 ### Strings
