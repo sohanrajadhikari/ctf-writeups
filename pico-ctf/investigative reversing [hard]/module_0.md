@@ -24,3 +24,41 @@ I got an idea by seeing the flag.txt. I created a file called ``flag.txt`` and p
 Using ``cat`` again, I found that a new flag like text has been generated again at the end. ``picoCTP3p:xni;n_6099dfbd}``  
 Doing this 4-5 times revealed that a new flag was generated each time but not "picoCTF{...}" format. Maybe writing a script to rerun this step until a "picoCTF" flag is generated would make sense?
 Wait, across all the flags generated, the first part : ``picoCT`` and last part : ``_6099dfdb`` remain the same but the middle part is being courrupted, probably through an algorithm.
+
+
+## Cutter
+I tried to view the assembly code using ``objdump`` but couldn't understand any of it. So, I thought it would be better to just open a decompiler like Cutter(rizin-cutter).  
+
+<img width="910" height="510" alt="image" src="https://github.com/user-attachments/assets/3baaf0e3-bf15-4069-ae4b-510143f451e6" />
+
+Since, I'm not an assembly genius, I used AI to analyze what the assembly code really did. Here's what I found out :  
+1. The first 6 characters,([0]-[5]) remain unchanged.
+2. From [6] to [14], each byte is shifted/incremented by +5.
+3. [15], the byte is shifted left, i.e., -3.
+4. Rest of the bytes are normal.
+
+
+## Reverse Engineering
+Since I know how the flag is generated now, I will just have to take the very first flag, shift its bytes and be done with it.
+
+```
+#open the file "mystery.png"
+with open("mystery.png", "rb") as f:
+        data = f.read()
+
+# read the last 26 bytes from the file
+encoded = data[-26:]
+
+
+flag = bytearray()
+
+flag.extend(encoded[:6])
+flag.extend((b-5) & 0xff for b in encoded[6:15])
+flag.append((encoded[15] + 3) & 0xff)
+flag.extend(encoded[16:26])
+
+print(bytes(flag))
+```
+Finally, the flag was found : picoCTF{f0und_1t_6099dfbd}
+
+This challange is truly deserving of its ``hard`` tag.
