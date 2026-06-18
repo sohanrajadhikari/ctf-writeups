@@ -16,7 +16,9 @@ Looking at the output of `` strings mystery | less ``, I found a few strings tha
 
 ### Zsteg
 Using ``zsteg`` on mystery.png yielded the exact same results as in the cat one.
+
 <img width="669" height="102" alt="image" src="https://github.com/user-attachments/assets/d7466dc9-ad3e-4754-bd56-01b2cd146f56" />  
+
 picoCTK.k5zsid6q_6099dfbd}
 
 ### Executing the file again
